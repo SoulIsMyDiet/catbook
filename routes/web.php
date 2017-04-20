@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/' , 'PagesController@index');
 Route::get('cats/create', 'catsController@create');
 Route::post('cats', 'catsController@store');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
